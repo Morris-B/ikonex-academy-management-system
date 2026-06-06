@@ -1,0 +1,505 @@
+/* index */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.container{
+    display:flex;
+}
+
+/* Sidebar */
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#1e3a8a;
+    position:fixed;
+    left:0;
+    top:0;
+    padding-top:20px;
+}
+
+.sidebar h2{
+    color:white;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:15px;
+}
+
+.sidebar ul li a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    border-radius:10px;
+    transition:0.4s ease;
+}
+
+/* Hover effect */
+.sidebar ul li a:hover{
+    background:white;
+    color:#1e3a8a;
+    transform:translateX(15px);
+    box-shadow:0 0 15px rgba(255,255,255,0.5);
+}
+
+/* Main Content */
+
+.main{
+    margin-left: 270px;
+    padding: 20px;
+}
+
+.header{
+    margin-bottom:30px;
+}
+
+/* Cards */
+
+.cards{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.card h3{
+    color:#555;
+}
+
+.card p{
+    font-size:35px;
+    margin-top:15px;
+    color:#171718;
+}
+
+/* Table */
+
+.table-section{
+    background:white;
+    margin-top:40px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.table-section h2{
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+}
+
+table td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+table tr:hover{
+    background:#f1f5f9;
+}
+
+/* students */
+.form-section{
+    background:rgb(73, 165, 153);
+    padding:20px;
+    margin-bottom:30px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(157, 67, 165, 0.1);
+}
+
+form{
+    display:grid;
+    gap:15px;
+}
+
+input,
+select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:5px;
+}
+
+button{
+    background:#2563eb;
+    color:rgb(12, 11, 11);
+    border:none;
+    padding:12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.delete-btn{
+    background:red;
+}
+
+.edit-btn{
+    background:green;
+}
+.cards{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:250px;
+    height:150px;
+    padding:25px;
+    border-radius:15px;
+    color:white;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.students-card{
+    background:#2196F3;
+}
+
+.classes-card{
+    background:#4CAF50;
+}
+
+.subjects-card{
+    background:#FF9800;
+}
+
+.card h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card p{
+    font-size:20px;
+}
+
+.autocomplete{
+    position:relative;
+}
+
+.suggestions{
+    position:absolute;
+    background:white;
+    width:100%;
+    border:1px solid #ccc;
+    z-index:1000;
+}
+
+.suggestions div{
+    padding:10px;
+    cursor:pointer;
+}
+
+.suggestions div:hover{
+    background:#f2f2f2;
+}
+
+/* BODY */
+body{
+    margin:0;
+    background:#f4f6f9;
+    font-family:Arial, sans-serif;
+}
+
+/* CONTAINER */
+.container{
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#1f2937;
+    color:white;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin-bottom:15px;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+    display:block;
+    padding:12px;
+    border-radius:8px;
+}
+
+.sidebar ul li a:hover{
+    background:#374151;
+}
+
+/* ================================
+   SCORES PAGE LAYOUT FIX (NEW ONLY)
+==================================*/
+
+/* This wrapper should contain your 4 cards */
+.scores-container{
+    margin-left:270px;   /* keeps space for sidebar */
+    padding:15px;
+
+    display:grid;
+    grid-template-columns:repeat(2, 1fr); /* 2 columns */
+    grid-template-rows:auto auto;         /* 2 rows */
+
+    gap:20px;
+
+    height:100vh;
+    overflow:hidden;  /* prevents page scrolling */
+}
+
+/* Make cards fit properly inside grid */
+.scores-container .card{
+    height:100%;
+    overflow:auto;  /* allows inner scrolling if needed */
+    min-height:250px;
+}
+
+/* Ensure inputs don’t stretch awkwardly */
+.scores-container input,
+.scores-container select{
+    width:100%;
+}
+
+/* Optional: Make table scroll inside card instead of page */
+.scores-container table{
+    display:block;
+    max-height:200px;
+    overflow-y:auto;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 900px){
+    .scores-container{
+        grid-template-columns:1fr; /* stack vertically on small screens */
+        height:auto;
+        overflow:auto;
+    }
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    overflow:hidden; /* prevents page scrolling */
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#1f2937;
+    color:white;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin-bottom:15px;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+    display:block;
+    padding:12px;
+    border-radius:8px;
+}
+
+.sidebar ul li a:hover{
+    background:#374151;
+}
+
+/* =========================
+   MAIN LAYOUT WRAPPER
+========================= */
+.container{
+    margin-left:250px;
+    height:100vh;
+    overflow:hidden;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+
+    gap:15px;
+    padding:15px;
+}
+
+/* =========================
+   CARDS (FIXED GRID PANELS)
+========================= */
+.card{
+    background:white;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+
+    overflow:auto; /* important: scroll inside card only */
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+.card input,
+.card select{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.card button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:8px;
+}
+
+.card button:hover{
+    background:#1d4ed8;
+}
+
+/* =========================
+   TABLE FIX
+========================= */
+table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+}
+
+table th{
+    background:#2563eb;
+    color:white;
+    padding:10px;
+}
+
+table td{
+    border:1px solid #ddd;
+    padding:8px;
+    text-align:center;
+}
+
+/* =========================
+   AUTOCOMPLETE FIX
+========================= */
+.autocomplete{
+    position:relative;
+    width:100%;
+}
+
+.suggestions{
+    position:absolute;
+    width:100%;
+    background:white;
+    border:1px solid #ccc;
+    max-height:150px;
+    overflow-y:auto;
+    z-index:999;
+}
+
+.suggestions div{
+    padding:8px;
+    cursor:pointer;
+}
+
+.suggestions div:hover{
+    background:#f1f1f1;
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 900px){
+    .container{
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+        overflow:auto;
+        height:auto;
+    }
+
+    body{
+        overflow:auto;
+    }
+}

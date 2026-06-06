@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Students Management</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>IKONEX ACADEMY</h2>
+
+        <ul>
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../Class streams/classstreams.html">Class Streams</a></li>
+            <li><a href="../Subjects/subjects.html">Subjects</a></li>
+            <li><a href="../Scores/scores.html">Scores</a></li>
+            <li><a href="../Reports/reports.html">Reports</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <div class="header">
+            <h1>Students Management</h1>
+        </div>
+
+        <!-- FORM -->
+        <div class="form-section">
+
+            <h2>Add Student</h2>
+
+            <form id="studentForm">
+
+                <input type="text" id="admission" placeholder="Admission Number" required>
+                <input type="text" id="firstname" placeholder="First Name" required>
+                <input type="text" id="lastname" placeholder="Last Name" required>
+
+                <select id="class" required>
+                    <option value="">Select Class</option>
+                </select>
+
+                <button type="submit">Save Student</button>
+
+            </form>
+
+        </div>
+
+        <!-- TABLE -->
+        <div class="table-section">
+
+           <h2>Students List</h2>
+
+<div class="filter-section">
+
+<button onclick="loadStudents()">
+    View All Students
+</button>
+
+<select id="filterClass">
+    <option value="">Select Class </option>
+</select>
+
+<button onclick="filterByClass()">
+    View Students By Class
+</button>
+
+</div>
+
+
+            <div class="search-section">
+
+    <input
+        type="text"
+        id="searchAdmission"
+        placeholder="Enter Admission Number">
+
+    <button onclick="searchStudent()">
+        Search
+    </button>
+
+    <button onclick="clearSearch()">
+        Clear
+    </button>
+
+</div>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Admission No</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../Student info management/students.js"></script>
+
+</body>
+</html>

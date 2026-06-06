@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reports</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+.autocomplete{
+    position:relative;
+}
+
+.suggestions{
+    position:absolute;
+    background:white;
+    width:100%;
+    border:1px solid #ccc;
+    max-height:200px;
+    overflow-y:auto;
+    z-index:1000;
+}
+
+.suggestions div{
+    padding:8px;
+    cursor:pointer;
+}
+
+.suggestions div:hover{
+    background:#f1f1f1;
+}
+
+.report-card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+    <h2>IKONEX ACADEMY</h2>
+    <ul>
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="../Student info management/students.html">Students</a></li>
+        <li><a href="../Class streams/classstreams.html">Class Streams</a></li>
+        <li><a href="../Subjects/subjects.html">Subjects</a></li>
+        <li><a href="../Scores/scores.html">Scores</a></li>
+    </ul>
+</div>
+
+<div class="main">
+
+<h1>Generate Report Card</h1>
+
+<!-- SEARCH -->
+<form id="reportForm">
+
+    <input 
+        type="text" 
+        id="admissionNo"
+        placeholder="Enter Admission Number"
+        required
+    >
+
+    <button type="submit">Generate Report</button>
+
+</form>
+
+<div id="reportCard">
+    Search a student to generate report
+</div>
+<br><br><br>
+<hr>
+
+<h2>Generate Class Performance Report</h2>
+<select id="classReport">
+    <option value="">Select Class Stream</option>
+</select>
+
+<button onclick="generateClassReport()">
+Generate Class Report
+</button>
+
+<button onclick="downloadClassPDF()">
+Download PDF
+</button>
+
+<div id="classReportCard"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="./reports.js"></script>

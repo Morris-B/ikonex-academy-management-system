@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Streams</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>IKONEX ACADEMY</h2>
+
+        <ul>
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../Student info management/students.html">Students</a></li>
+            <!-- <li><a href="../Class streams/classstreams.html">Class Streams</a></li> -->
+            <li><a href="../Subjects/subjects.html">Subjects</a></li>
+            <li><a href="../Scores/scores.html">Scores</a></li>
+            <li><a href="../Reports/reports.html">Reports</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="header">
+            <h1>Class Streams</h1>
+        </div>
+
+        <!-- Add Class Form -->
+        <div class="form-section">
+
+            <h2>Add Class Stream</h2>
+
+            <form id="classForm">
+
+                <input
+                    type="text"
+                    id="className"
+                    placeholder="Enter class stream"
+                    required>
+
+                <button type="submit">
+                    Save Class
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Search -->
+        <div class="search-section">
+
+            <input
+                type="text"
+                id="searchClass"
+                placeholder="Search class stream">
+
+            <button onclick="searchClass()">
+                Search
+            </button>
+
+            <button onclick="clearSearch()">
+                Clear
+            </button>
+
+        </div>
+
+       <!-- Table -->
+<div class="table-section">
+
+    <h2>Class Streams</h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Class Stream</th>
+                <th>Total Students</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody id="classTable"></tbody>
+
+    </table>
+
+    <!-- BUTTONS MOVED TO BOTTOM (CLEAN SECTION) -->
+    <div style="margin-top: 20px; display: flex; gap: 10px;">
+
+        <button onclick="loadAllClasses()">
+            View All Classes
+        </button>
+
+        <button onclick="closeClassView()" id="closeClassBtn">
+            Close
+        </button>
+
+    </div>
+
+    <!-- EXTRA DISPLAY AREA FOR CARD VIEW (optional if you're using cards) -->
+    <div id="classContainer"></div>
+
+</div>
+
+<script src="../Class streams/classes.js"></script>
+
+</body>
+</html>

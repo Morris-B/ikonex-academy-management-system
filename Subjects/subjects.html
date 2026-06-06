@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects Management</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>IKONEX ACADEMY</h2>
+
+        <ul>
+      <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../Student info management/students.html">Students</a></li>
+            <li><a href="../Class streams/classstreams.html">Class Streams</a></li>
+            <!-- <li><a href="../Subjects/subjects.html">Subjects</a></li> -->
+            <li><a href="../Scores/scores.html">Scores</a></li>
+            <li><a href="../Reports/reports.html">Reports</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="header">
+            <h1>Subjects Management</h1>
+        </div>
+
+        <!-- Form -->
+        <div class="form-section">
+
+            <h2>Add Subject</h2>
+
+            <form id="subjectForm">
+
+                <input type="text" id="subjectName" placeholder="Subject Name" required>
+
+                <input type="text" id="subjectCode" placeholder="Subject Code " required>
+
+                <button type="submit">Add Subject</button>
+
+            </form>
+
+        </div>
+
+        <!-- Table -->
+  <div class="table-section">
+
+<h2>Subjects List</h2>
+
+<div class="search-section">
+
+<input
+type="text"
+id="searchSubject"
+placeholder="Search Subject">
+
+<button onclick="searchSubject()">
+Search
+</button>
+
+<button onclick="clearSearch()">
+Clear
+</button>
+<h2>Subjects List</h2>
+
+<button onclick="loadAllSubjects()" id="viewSubjectsBtn">
+    View All Subjects
+</button>
+
+<button onclick="clearSubjectsView()" id="clearSubjectsBtn" style="display:none;">
+    Clear
+</button>
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Subject Name</th>
+<th>Subject Code</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody id="subjectTable">
+
+</tbody>
+
+</table>
+
+    <!-- ASSIGN SUBJECT TO CLASS -->
+    <div style="margin-top:15px;">
+
+        <select id="subjectSelect">
+            <option value="">Select Subject</option>
+        </select>
+
+        <select id="classSelect">
+            <option value="">Select Class Stream</option>
+        </select>
+
+        <button onclick="assignSubjectToClass()">
+            Assign Subject
+        </button>
+
+    </div>
+
+</div>
+</div>
+
+    </div>
+
+</div>
+
+<script src="../Subjects/subjects.js"></script>
+
+</body>
+</html>
