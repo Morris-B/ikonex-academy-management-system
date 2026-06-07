@@ -6,14 +6,19 @@ const db = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT
+    port: process.env.DB_PORT,
+
+    ssl: {
+        minVersion: "TLSv1.2",
+        rejectUnauthorized: true
+    }
 });
 
 db.connect((err) => {
     if (err) {
-        console.log("Database connection failed:", err);
+        console.log("❌ Database connection failed:", err);
     } else {
-        console.log("MySQL Connected Successfully");
+        console.log("✅ MySQL Connected Successfully");
     }
 });
 
